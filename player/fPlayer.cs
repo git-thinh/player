@@ -12,7 +12,8 @@ namespace player
     public class fPlayer: Form, IRequestHandler
     {
         readonly WebView browser;
-        const string url = "http://media.com:55559/player/jw-5.10.html";
+        //const string url = "http://media.com:55559/player/jw-5.10.html";
+        const string url = "play://player.html";
 
         public fPlayer() {
             this.Icon = Properties.Resources.play;
@@ -25,12 +26,15 @@ namespace player
             this.Controls.Add(browser);
         }
 
-        public bool OnBeforeBrowse(IWebBrowser browser, IRequest request, NavigationType naigationvType, bool isRedirect)
+        public bool OnBeforeResourceLoad(IWebBrowser browser, IRequestResponse requestResponse)
         {
+            IRequest request = requestResponse.Request;
+            string url = request.Url, s = string.Empty;
+
             return false;
         }
 
-        public bool OnBeforeResourceLoad(IWebBrowser browser, IRequestResponse requestResponse)
+        public bool OnBeforeBrowse(IWebBrowser browser, IRequest request, NavigationType naigationvType, bool isRedirect)
         {
             return false;
         }

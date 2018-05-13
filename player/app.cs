@@ -52,8 +52,9 @@ namespace player
             Settings settings = new Settings();
             if (CEF.Initialize(settings))
             {
-                //CEF.RegisterScheme("test", new SchemeHandlerFactory());
-                //CEF.RegisterJsObject("bound", new BoundObject());
+                CEF.RegisterScheme("play", new SchemeHandlerFactory());
+                CEF.RegisterJsObject("bound", new BoundObject());
+
                 player = new fPlayer();
 
                 Application.Run(player);

@@ -80,6 +80,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\BoundObject.cs" />
+    <Compile Include="API\SchemeHandler.cs" />
     <Compile Include="app.cs" />
     <Compile Include="fPlayer.cs">
       <SubType>Form</SubType>
