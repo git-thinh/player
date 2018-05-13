@@ -1,0 +1,12 @@
+
+Release/player.exe
+Release/player.vshost.exe.manifest
+Release/player.vshost.exe
+Release/player.pdb
+player/obj/Debug/player.Properties.Resources.resources
+player/obj/Debug/player.pdb
+player/obj/Debug/player.exe
+player/obj/Debug/player.csprojResolveAssemblyReference.cache
+player/obj/Debug/player.csproj.GenerateResource.Cache
+player/obj/Debug/player.csproj.FileListAbsolute.txt
+player/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
