@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CefSharp;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -20,7 +21,7 @@ namespace player
                 using (Stream stream = assembly.GetManifestResourceStream(resourceName))
                 {
                     if (stream == null)
-                    { 
+                    {
                     }
                     else
                     {
@@ -32,15 +33,33 @@ namespace player
                                 ms.Write(buffer, 0, read);
                             buffer = ms.ToArray();
                         }
-                        asm = Assembly.Load(buffer);
+                        try
+                        {
+                            asm = Assembly.Load(buffer);
+                        }
+                        catch (Exception ex) {
+                            string s =ex.Message;
+                        }
                     }
                 }
                 return asm;
             };
         }
 
+        static fPlayer player;
+        public static void Run()
+        {
+            Settings settings = new Settings();
+            if (CEF.Initialize(settings))
+            {
+                //CEF.RegisterScheme("test", new SchemeHandlerFactory());
+                //CEF.RegisterJsObject("bound", new BoundObject());
+                player = new fPlayer();
 
+                Application.Run(player);
+            }
 
+        }
     }
 
     static class program
@@ -50,7 +69,7 @@ namespace player
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fPlayer());
+            app.Run();
         }
     }
 }

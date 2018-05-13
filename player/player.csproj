@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -35,10 +35,34 @@
   <PropertyGroup>
     <ApplicationIcon>play.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET_2_0</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CefSharp">
       <HintPath>LIB\CefSharp.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=1.19.0.41833, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LIB\CefSharp.WinForms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>LIB\Newtonsoft.Json.dll</HintPath>
@@ -60,6 +84,115 @@
     <Compile Include="fPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="KIT\System\System.Linq\Class1.cs" />
+    <Compile Include="KIT\System\System.Linq\DeepCopy.Assign.cs" />
+    <Compile Include="KIT\System\System.Linq\IsNumber.cs" />
+    <Compile Include="KIT\System\System.Linq\Lucene.Net.cs" />
+    <Compile Include="KIT\System\System.Linq\ReaderWriterLockSlim.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Collections.Generic\HashSet.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Collections.Generic\ISet.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Data.Linq\MonoTODOAttribute.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Dynamic\System.Linq.Dynamic.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\BinaryExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\ConditionalExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\ConstantExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\ElementInit.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\EmitContext.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\Expression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\ExpressionPrinter.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\ExpressionTransformer.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\ExpressionType.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\ExpressionVisitor.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\Expression_T.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\Extensions.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\InvocationExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\LambdaExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\ListInitExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\MemberAssignment.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\MemberBinding.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\MemberBindingType.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\MemberExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\MemberInitExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\MemberListBinding.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\MemberMemberBinding.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\MethodCallExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\NewArrayExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\NewExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\ParameterExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\TypeBinaryExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Expressions\UnaryExpression.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq.Ext.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\Check.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\Enumerable.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\Grouping.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\IGrouping.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\ILookup_T.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\IOrderedEnumerable_T.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\IOrderedQueryable.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\IOrderedQueryable_T.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\IQueryable.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\IQueryable_T.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\IQueryProvider.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\Lookup.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\OrderedEnumerable.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\OrderedSequence.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\Queryable.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\QueryableEnumerable.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\QueryableTransformer.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\QuickSort.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\SortContext.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\SortDirection.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Linq\SortSequenceContext.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Runtime.CompilerServices\DynamicAttribute.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Runtime.CompilerServices\ExecutionScope.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Runtime.CompilerServices\ExtensionAttribute.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Runtime.CompilerServices\IStrongBox.cs" />
+    <Compile Include="KIT\System\System.Linq\System.Runtime.CompilerServices\StrongBox_T.cs" />
+    <Compile Include="KIT\System\System.Linq\System\Action.cs" />
+    <Compile Include="KIT\System\System.Linq\System\Func.cs" />
+    <Compile Include="KIT\System\System.Linq\Tuple\IStructuralComparable.cs" />
+    <Compile Include="KIT\System\System.Linq\Tuple\IStructuralEquatable.cs" />
+    <Compile Include="KIT\System\System.Linq\Tuple\Tuple.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\AuthenticationType.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\ContentGrant.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\ContentRight.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\ContentUser.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\CryptoProvider.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\LocalizedNameDescriptionPair.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\PublishLicense.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\RightsManagementException.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\RightsManagementFailureCode.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\SecureEnvironment.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\UnsignedPublishLicense.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\UseLicense.cs" />
+    <Compile Include="KIT\System\System.Security.RightsManagement\UserActivationMode.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\Extensions.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\LoadOptions.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\SaveOptions.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XAttribute.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XCData.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XComment.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XContainer.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XDeclaration.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XDocument.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XDocumentType.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XElement.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XIterators.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XName.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XNamespace.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XNode.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XNodeDocumentOrderComparer.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XNodeEqualityComparer.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XNodeNavigator.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XNodeReader.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XNodeWriter.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XObject.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XObjectChange.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XObjectChangeEventArgs.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XProcessingInstruction.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XStreamingElement.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XText.cs" />
+    <Compile Include="KIT\System\System.Xml.Linq\System.Xml.Linq\XUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -71,6 +204,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="LIB\bekle.zip" />
+    <None Include="KIT\System\System.Xml.Linq\System.Xml.Linq\ChangeLog" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,10 +221,16 @@
     <EmbeddedResource Include="LIB\System.Speech.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LIB\CefSharp.dll" />
+    <Content Include="LIB\CefSharp.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="LIB\player.html" />
+    <EmbeddedResource Include="LIB\player.swf" />
+    <Content Include="LIB\CefSharp.WinForms.dll" />
     <Content Include="play.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="KIT\System\System.Linq\_demo\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
